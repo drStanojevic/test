@@ -41,10 +41,7 @@
 /* GENERAL STYLE */
 body {
     
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0%;
+    
     background-color: var(--Cream);
     font-size: var(--Font-size);
     font-family: var(--Font-family);
@@ -53,11 +50,19 @@ body {
 
 
 main {
+    max-width: 400px;
+    margin: 10% 3%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 30px;
+}
+
+@media (min-width: 430px) {
+    main {
+        margin: 10% auto;
+    }
 }
 /* BALANCE */
 
@@ -65,7 +70,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: clamp(90%, 24.5vw, 500px);
+   
     background-color: var(--Soft-red);
     border-radius: 15px;
     padding:3% 5%;
@@ -84,16 +89,15 @@ main {
 /* CARD */
 
 .card {
-    width: clamp(90%, 24.5vw, 500px);
+   
     background-color: var(--Very-pale-orange);
     border-radius: 20px;
     padding: 7%;
-
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
+    gap: 30px;
+  
+ 
 }
 .card__title {
     color: var(--Dark-brown);
@@ -106,8 +110,7 @@ main {
 .card__footer {
     display: flex;
     justify-content: space-between;
-    width: inherit;
-    padding: 1% 10%;
+    
    
 }
 
@@ -119,10 +122,8 @@ main {
 
 .chart {
     display: flex;
-    align-items: flex-end;
-    gap: 10px;
-    width: clamp(90%, 24.5vw, 400px);
-
+    justify-content: center;
+    align-items: center;
 }
 
 .item {
@@ -130,7 +131,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     height: 150px;
     width: 50px;
     align-self: flex-end;
@@ -138,7 +139,7 @@ main {
 }
 
 .bar {
-    width: 80%;
+    width: 60%;
     height: 100%;
     background-color: var(--Soft-red);
     transform-origin: bottom;
@@ -146,6 +147,7 @@ main {
     transition-duration: 0.5s;
     border-radius: 6px;
     cursor: pointer;
+   
 }
 
 .amount {
@@ -153,7 +155,7 @@ main {
     top:-30px; 
     opacity: 0;
     width: max-content;
-    
+    font-size: 14px;
   
     padding: 0.1rem;
     border-radius: 10%;
@@ -173,6 +175,9 @@ main {
    
 }
 
+.barMax {
+    background-color: var(--Cyan);
+}
 /* utils */
 
 .line {
