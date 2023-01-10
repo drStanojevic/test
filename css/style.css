@@ -53,13 +53,18 @@ body {
 
 
 main {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 30px;
 }
 /* BALANCE */
 
 .balance {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: clamp(90%, 24.5vw, 500px);
     background-color: var(--Soft-red);
     border-radius: 15px;
@@ -86,7 +91,9 @@ main {
 
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
 }
 .card__title {
     color: var(--Dark-brown);
@@ -102,7 +109,7 @@ main {
    
 }
 
-.growth {
+.expanse__increase {
     align-self: flex-end;
 }
 
@@ -112,11 +119,12 @@ main {
     display: flex;
     align-items: flex-end;
     gap: 10px;
-    width: clamp(90%, 24.5vw, 500px);
+    width: clamp(90%, 24.5vw, 400px);
 
 }
 
 .item {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,22 +132,44 @@ main {
     height: 150px;
     width: 50px;
     align-self: flex-end;
-    gap: 15px;
+    gap: 5px;
 }
 
 .bar {
-    width: 40px;
-    height: 100px;
+    width: 80%;
+    height: 100%;
     background-color: var(--Soft-red);
     transform-origin: bottom;
     transition-property: transform;
     transition-duration: 0.5s;
     border-radius: 6px;
+    cursor: pointer;
 }
 
+.amount {
+    position: relative;
+    top:-30px; 
+    opacity: 0;
+    width: max-content;
+    
+  
+    padding: 0.1rem;
+    border-radius: 10%;
+    background-color: var(--Dark-brown);
+    color: var(--Very-pale-orange);
+    transform-origin: bottom;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+}
 
-
-
+.bar:hover {
+    filter: brightness(120%);
+   
+}
+.bar:hover .amount {
+    opacity: 1;
+   
+}
 
 /* utils */
 
@@ -155,4 +185,25 @@ main {
 
 .clr-dark {
     color: var(--Dark-brown);
+}
+
+.circle-outline {
+    position: absolute;
+    left:-50%;
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 50%;
+    
+}
+
+.circle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    
+    background-color: var(--Dark-brown);
+    border-radius: 50%;
+   
 }
